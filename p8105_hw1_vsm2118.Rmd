@@ -1,2 +1,5 @@
-Victoria Mello (vsm2118) 
-HW 1 Data Science 
+Title: HW1 Data Science
+Author: Victoria Mello (vsm2118) 
+Date: 09/19/2023
+output: github_document
+
