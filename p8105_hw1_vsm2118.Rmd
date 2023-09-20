@@ -14,3 +14,22 @@ library(moderndive)
 data("early_january_weather")
 ```
 
+The `early_january_weather` dataset contains information about...
+
+```{r}
+# Access dataset help file
+?early_january_weather
+```
+
+```{r}
+# Variables in the dataset
+names(early_january_weather)
+
+# Size of the dataset (number of rows and columns)
+nrow(early_january_weather)  # Number of rows
+ncol(early_january_weather)  # Number of columns
+
+# Mean temperature
+mean_temp <- mean(early_january_weather$temp)
+mean_temp
+```
