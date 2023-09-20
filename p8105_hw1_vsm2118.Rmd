@@ -1,5 +1,8 @@
-Title: HW1 Data Science
-Author: Victoria Mello (vsm2118) 
-Date: 09/19/2023
+---
+title: "HW 1 Data Science"
+author: "Victoria Mello vsm2118"
+date: "September 19, 2023"
 output: github_document
+---
+
 
