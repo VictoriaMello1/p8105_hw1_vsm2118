@@ -4,3 +4,13 @@ author: "Victoria Mello vsm2118"
 date: "September 19, 2023"
 output: github_document
 ---
+# Promblem 1
+
+```{r}
+# Load the moderndive package
+library(moderndive)
+
+# Load the early_january_weather dataset
+data("early_january_weather")
+```
+
