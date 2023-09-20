@@ -46,3 +46,10 @@ scatter_plot <- ggplot(early_january_weather, aes(x = time_hour, y = temp, color
 # Display the scatterplot
 print(scatter_plot)
 ```
+
+In the scatterplot we observe that during the month of January the temperature at the beginning of the month was around 40 degrees fahrenheit and sharply decreased to below 25 degrees. While there are fluctuations, the temperature appears to follow a generally increasing trend throughout the month until January 15th where there is a peak temperature of around 60 degrees, followed by a sharp decline down to about 35 degrees where the temperature remained for the rest of the month. There was a notable period of high humidity, as shown by the lighter blue data points on the scatterplot, which started around January 10 and ended around the 15th.
+
+```{r}
+# Export the scatterplot as an image file (e.g., PNG) to your project directory
+ggsave("scatterplot.png", plot = scatter_plot, width = 6, height = 4)
+```
