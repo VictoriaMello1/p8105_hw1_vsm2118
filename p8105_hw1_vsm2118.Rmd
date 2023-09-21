@@ -53,3 +53,39 @@ In the scatterplot we observe that during the month of January the temperature a
 # Export the scatterplot as an image file (e.g., PNG) to your project directory
 ggsave("scatterplot.png", plot = scatter_plot, width = 6, height = 4)
 ```
+
+# Problem 2 
+
+```{r}
+# Loading the tidyverse package
+library(tidyverse)
+
+# Create the data frame
+my_data <- data.frame(
+  numeric_var = rnorm(10),                   # Random sample from a standard Normal distribution
+  logical_var = rnorm(10) > 0,              # Logical vector indicating whether elements are > 0
+  character_var = c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J"),  # Character vector
+  factor_var = factor(rep(1:3, length.out = 10))  # Factor vector with 3 different levels
+)
+```
+
+```{r}
+# Attempt to calculate the mean for each variable
+mean_numeric <- mean(pull(my_data, numeric_var))
+mean_logical <- mean(pull(my_data, logical_var))
+mean_character <- mean(pull(my_data, character_var))
+mean_factor <- mean(pull(my_data, factor_var))
+```
+
+#### What works and what doesnt? 
+The factor and character variables produced warning messages when trying to take the means of these variables in the dataframe. This is expected given that calculating means for character and factor variables doesn't make sense in the traditional statistical sense because these variable types represent categorical data rather than numeric. 
+
+```{r}
+# Applying as.numeric to the variables
+numeric_logical <- as.numeric(my_data$logical_var)
+numeric_character <- as.numeric(my_data$character_var)
+numeric_factor <- as.numeric(my_data$factor_var)
+```
+
+#### What happens, and why? Does this help explain what happens when you try to take the mean?
+For the Logical Variable as.numeric converted TRUE to 1 and FALSE to 0 as expected without any error messages. However, the character variable resulted in a Warning message since as.numeric cannot directly convert characters like "A" to numeric, so it returns NA. For the factor variable, as.numeric attempted to convert factor levels to numeric, but the resulting values may not represent the original data's meaning, resulting in the Warning message and leading to NA. This helps to explain why taking the mean of non-numeric variables results in NA. It is because R requires numeric values to complete a mean calculation, and thus NA is returned when the data contains non-numeric values introduced by coercion. 
