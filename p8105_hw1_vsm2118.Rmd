@@ -1,6 +1,6 @@
 ---
 title: "HW 1 Data Science"
-author: "Victoria Mello vsm2118"
+author: "Victoria Mello (vsm2118)"
 date: "September 19, 2023"
 output: github_document
 ---
