@@ -62,11 +62,9 @@ ggsave("scatterplot_HW1_vsm2118.png")
 # Problem 2 
 
 ```{r}
-# Loading the tidyverse package
-library(tidyverse)
-
 # Create the data frame
-my_data <- data.frame(
+problem_2=
+ tibble(
   numeric_var = rnorm(10),                   # Random sample from a standard Normal distribution
   logical_var = rnorm(10) > 0,              # Logical vector indicating whether elements are > 0
   character_var = c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J"),  # Character vector
@@ -76,13 +74,13 @@ my_data <- data.frame(
 
 ```{r}
 # Attempt to calculate the mean for each variable
-mean_numeric <- mean(pull(my_data, numeric_var))
+mean_numeric <- mean(pull(problem_2, numeric_var))
   print(mean_numeric)
-mean_logical <- mean(pull(my_data, logical_var))
+mean_logical <- mean(pull(problem_2, logical_var))
   print(mean_logical)
-mean_character <- mean(pull(my_data, character_var))
+mean_character <- mean(pull(problem_2, character_var))
   print(mean_character)
-mean_factor <- mean(pull(my_data, factor_var))
+mean_factor <- mean(pull(problem_2, factor_var))
   print(mean_factor)
 ```
 
@@ -91,9 +89,9 @@ When taking the mean of the numeric and logical variables a numerical result was
 
 ```{r}
 # Applying as.numeric to the variables
-numeric_logical <- as.numeric(my_data$logical_var)
-numeric_character <- as.numeric(my_data$character_var)
-numeric_factor <- as.numeric(my_data$factor_var)
+numeric_logical <- as.numeric(problem_2$logical_var)
+numeric_character <- as.numeric(problem_2$character_var)
+numeric_factor <- as.numeric(problem_2$factor_var)
 ```
 
 #### What happens, and why? Does this help explain what happens when you try to take the mean?
