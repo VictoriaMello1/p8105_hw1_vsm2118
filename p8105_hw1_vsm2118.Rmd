@@ -9,34 +9,39 @@ output: github_document
 ```{r}
 # Load the moderndive package
 library(moderndive)
+library(tidyverse)
 
 # Load the early_january_weather dataset
 data("early_january_weather")
 ```
 
-The `early_january_weather` dataset contains information about...
-
 ```{r}
 # Access dataset help file
 ?early_january_weather
 ```
+The dataset “early_january_weather” has 15 variables total:
+
+origin (weather station)
+
+year, month, day, hour (time of recording)
+
+temp, dewp (temperature and dewpoint in F)
+
+humid (relative humidity)
+
+wind_dir, wind_speed, wind_gust (wind direction (in degrees), speed and gust speed (in mph))
+
+precip (precipitation in inches)
+
+pressure (sea level pressure in millibars)
+
+visib (visibility in miles)
+
+ftime_hour (date and hour of the recording)
+
+The most important variables in this dataset for this analysis are temp, humid, and time_hour. There are `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns in the dataset. The mean temperature in the dataset is `r mean(early_january_weather[["temp"]])` degrees fahrenheit.
 
 ```{r}
-# Variables in the dataset
-names(early_january_weather)
-
-# Size of the dataset (number of rows and columns)
-nrow(early_january_weather)  # Number of rows
-ncol(early_january_weather)  # Number of columns
-
-# Mean temperature
-mean_temp <- mean(early_january_weather$temp)
-mean_temp
-```
-
-```{r}
-library(ggplot2)
-
 # Create the scatterplot
 scatter_plot <- ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +
   geom_point() +
