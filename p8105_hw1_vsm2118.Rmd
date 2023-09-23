@@ -21,23 +21,23 @@ data("early_january_weather")
 ```
 The dataset “early_january_weather” has 15 variables total:
 
-origin (weather station)
+* origin (weather station)
 
-year, month, day, hour (time of recording)
+* year, month, day, hour (time of recording)
 
-temp, dewp (temperature and dewpoint in F)
+* temp, dewp (temperature and dewpoint in F)
 
-humid (relative humidity)
+* humid (relative humidity)
 
-wind_dir, wind_speed, wind_gust (wind direction (in degrees), speed and gust speed (in mph))
+* wind_dir, wind_speed, wind_gust (wind direction (in degrees), speed and gust speed (in mph))
 
-precip (precipitation in inches)
+* precip (precipitation in inches)
 
-pressure (sea level pressure in millibars)
+* pressure (sea level pressure in millibars)
 
-visib (visibility in miles)
+* visib (visibility in miles)
 
-ftime_hour (date and hour of the recording)
+* ftime_hour (date and hour of the recording)
 
 The most important variables in this dataset for this analysis are temp, humid, and time_hour. There are `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns in the dataset. The mean temperature in the dataset is `r mean(early_january_weather[["temp"]])` degrees fahrenheit.
 
